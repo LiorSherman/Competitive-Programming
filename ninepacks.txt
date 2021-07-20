@@ -1,0 +1,7 @@
+The idea is to use dynamic programming to calculate for each K (K_max = 100*1000) the minimum packs required
+to get K units based on the given packs in the input.
+if K is in input so F(k) = 1
+if K can be assembeled from a combination of packs from input so F(k) = min{F(k-pack)+1} for each of the packs.
+else F(k) = INF
+The above is mutual to the Buns and Hotdogs. The result will be the index of the minimum sum value between those vectors.
+Complexity - Each iteration i (per input) is O(Total units in the first i packs), total in worst case is O(5,000,000)

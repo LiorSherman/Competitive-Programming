@@ -1,0 +1,12 @@
+Observation 0: is that every symbol differs from another symbol by the number of "holes" in the symbol. So the idea
+is to detect a symbol sequence of black pixels and to count the holes in it.
+First we need to distinguish between the white background and the white holes, so we run dfs from any background white pixel
+to all other reachable white pixels and mark them with a special mark (to make sure the pixel is white we first add an external white
+frame around the image to avoid any symbol pixels in the borders of the image).
+Observation 1: at this point any white pixels are part of an internal hole inside a symbol.
+Second we iterate over each of the pixels of the image in a loop, and if we run into a black pixel, then it is a part of as symbol.
+Starting from this point we began a dfs traversal over all reachable black pixels in order to cover the entire shape of the symbol.
+While doing so if we detect a white pixel neighbour of a black pixel, then according to Observation 1 we detected an internal hole.
+From this point we begin an internal dfs traversal on the white pixels in order to cover the entire hole, while adding 1 to the counter.
+During each of the dfs traversals we mark each pixel (black or white) with a mark indicating we visited it, leading to not repeating same pixel twice.
+Complexity - O(Number of Pixels of the image) as we travel over each of the pixels at most 2 times (one in each phase)

@@ -1,0 +1,6 @@
+The idea is to find a convex hull for all the black points.
+A red point will be inside a triangle of black points iff it lies inside the convex hull.
+The way I check if a red point inside a convex hull is by binary search to get the possible triangle where the point might ly
+inside by checking orientation. Later we check if a point is inside triangle if all 3 triangles that can be constucted inside have the same orientation.
+if P is the number of black points and R is the number of red points, the complexity is
+O(P + Rlog(P)) (P is time to construct the ch, Rlog(P) is the number of binary searches)

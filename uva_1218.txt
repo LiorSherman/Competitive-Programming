@@ -1,0 +1,13 @@
+The idea is to use dynamic programming.
+For each node - its either a server or a host.
+if it is a server, then each one of his neighbours can be either host or server.
+else it is a host, then one of his neighbours (children or parent) is a server.
+We perform a dfs recursion starting from the bottom. For each of the leaves there are only 2 options:
+either a server or its parent is a server. for each of the internal nodes we calculate the best option in its sub tree:
+A) if its a server, then the best option is to choose the minimum between each of the children possibilities to be server or host
+as there is no restriction here.
+B) if its a host then if its father is a server then definetely neither of the children is a server, so will just take the
+sum of the sub trees for each of the children given each child is a host.
+if one of the childs is a server then neither the father nor any other child is a server (in this calculation,
+in order to avoid redundent calculation of the sum, the solution is to calculate the entire sum and substruct the third option.
+Total O(V+E) as we iterate on every node and access it at most 2 times.

@@ -1,0 +1,7 @@
+The idea is to translate the block into a weighted directed graph where the nodes represent the squares and exist an edge with
+a weight W from U to V iff square #U adjacent to square V which has a strength #W.
+Later we add abother 2 nodes S, T s.t S is connected to the first row of squares with with edges with weights of the row
+accordingly. The last row will be connected to T with a weight of 0 for each square.
+Now the idea is to find the minimum weighted distance from S to T using dijakstra algorythm while abaling to recreate the
+path.
+O(VlogV)

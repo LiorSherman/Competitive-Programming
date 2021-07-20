@@ -1,0 +1,4 @@
+using simple geometry and Pythagoras to find the minimum length.
+Finding maximum length requires calculation of the derivation in order to find the x location between the poles s.t
+the length of the ropes from each of the poles will be maximal while meeting the conditions.
+O(1) for each case. (O(n) in total)

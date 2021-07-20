@@ -1,0 +1,5 @@
+The idea is to use a union-find data structure in a way that any 2 explicit or implicit rhymes are to be found in
+the same group. Later a contradiction will be found iff exist 2 words W1 and W2 s.t they are in the same group and exist
+a Statement "W1 not W2" in the Input.
+Includes a use of a hash map in order to translate from strings to group indexes.
+O(Nlog*(N)) total

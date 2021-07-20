@@ -1,0 +1,7 @@
+Observation : a gallery doesn't have critical points iff the shape of the gallery is a convex hull of itself.
+Hence we construct a convex hull of the input shape and check if they the same.
+Since No three consecutive points are co-linear -> number of points in the convex hull can't be greater than number of points of the
+original shape.
+Another thing is if a gallery has a critical point, than it is definitely not a part of a convex hull, meaning the convex hull has less points.
+So basically the answer would be that a gallery has a critical point iff a convex hull has less points than the original shape.
+O(N) for each case to construct the ch.

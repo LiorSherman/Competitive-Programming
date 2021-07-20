@@ -1,0 +1,8 @@
+The idea is to use an indicator vector representing the subgroups of the entire set.
+bit i is set iff the i'th piece is in the subgroup.
+Then, to use a dynamic programming -
+For each possible sum of every subset of pieces we calculate the total number of distinct primary factors (the base)
+Later for each of the subset groups we use to itterate over all the sub sub groups same as it was taught in class
+to check the maximum revenue of the sub sub group and the complement sub sub group (using xor trick) since it was calculated
+in the previous itterations.
+O(2^(2N))

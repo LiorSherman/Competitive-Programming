@@ -1,0 +1,2 @@
+Clasical segment tree problem.
+Time Complexity for K queries is : O(KlogN)
